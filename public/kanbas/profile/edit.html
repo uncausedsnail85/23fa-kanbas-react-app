@@ -1,0 +1,95 @@
+<!-- 
+    When user clicks account. Shows 2nd columns
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td valign="top">
+                    <ul>
+                        <li><a href="/kanbas/account.html">Account</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="/kanbas/courses.html">Courses</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Studio</a></li>
+                        <li><a href="#">Commons</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#">Notifications</a></li>
+                        <li><a href="/kanbas/profile/index.html">Profile</a></li>
+                        <li><a href="#">Files</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">ePortfolios</a></li>
+                        <li><a href="#">Shared Content</a></li>
+                        <li><a href="#">The Hub</a></li>
+                        <li><a href="#">Qwickly Course Tools</a></li>
+                        <li><a href="#">Global Announcements</a></li>
+                    </ul>
+                </td>
+                <td valign="top" style="width:70%">
+                    <h2>Bryan A</h2>
+
+                    <form id="profile-edit">
+                        <label for="name">Name*</label>
+                        <input id="name" placeholder="Bryan A" />
+                        <label for="pronouns">Pronouns</label>
+                        <select id="pronouns">
+                            <option selected value="NONE">None</option>
+                            <option value="he">He/Him</option>
+                            <option value="she">She/Her</option>
+                            <option value="they">They/Them</option>
+                            <option value="unspecified">Rather not say</option>
+                        </select><br />
+                        <br />
+                        <label for="title">Title</label>
+                        <input id="title" />
+                        <br />
+                        <h3>Contact</h3>
+                        No registered services, you can add some on the <a href="#">settings</a> page. <br />
+                        <br />
+                        <h3>Contact</h3>
+                        No registered services, you can add some on the <a href="#">settings</a> page. <br />
+                        <br />
+                        <h3>Biography</h3>
+                        Big Nerd <br />
+                        <textarea cols="50" rows="3"></textarea><br />
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="https://youtube.com">YouTube⧉</a></li>
+                        </ul>
+                        <table style="width:65%">
+                            <thead>
+                                <th style="text-align: center; width:50%">Title</th>
+                                <th style="text-align: center; width:50%">URL</th>
+                            </thead>
+                            <tr>
+                                <td><input id="youtube" value="YouTube" />→</td>
+                                <td><input id="youtubeurl" value="https://youtube.com" /></td>
+                                <td><a href="#">Remove</a></td>
+                            </tr>
+                        </table>
+                        <button type="button">Add another link</button><button type="button">Cancel</button><br />
+                        <button type="button" onclick="window.location.href='/kanbas/profile/index.html';">Save Profile</button>
+                        <button type="button" onclick="window.location.href='/kanbas/profile/edit.html';">Edit Profile</button>
+                        <button type="button" onclick="window.location.href='/kanbas/profile/index.html';">Cancel Editing</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
