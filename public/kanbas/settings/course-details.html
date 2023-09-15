@@ -49,7 +49,7 @@
                         <li><a href="/kanbas/settings/course-details.html">Settings</a></li>
                     </ul>
                 </td>
-                <td valign="top">
+                <td valign="top"  style="width:100%">
                     <button onclick="window.location.href='/kanbas/settings/course-details.html';">Course Details</button>
                     <button>Sections</button>
                     <button onclick="window.location.href='/kanbas/settings/navigation.html';">Navigation</button>
@@ -58,12 +58,141 @@
                     <button>Integration</button>
 
                     <h2>Course Details</h2>
-                    Image: <button>Choose Image</button> <br />
-                    Name: CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL] <br />
-                    Course Code: CS5610.11550.202410 <br />
-                    Blueprint Course: No <br />
-                    
-
+                    <table style="width:100%">
+                        <tr>
+                            <td style="width:15%">Image:</td>
+                            <td> <button>Choose Image</button></td>
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]</td>
+                        </tr>
+                        <tr>
+                            <td>Course Code:</td>
+                            <td>CS5610.11550.202410</td>
+                        </tr>
+                        <tr>
+                            <td>Blueprint Course:</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Course Template:</td>
+                            <td><input type="checkbox" value="TEMPLATE" name="check-template" id="chkbox-template" disabled/> Enable course as a Course Template</td>
+                        </tr>
+                        <tr>
+                            <td>Time Zone:</td>
+                            <td>
+                                <select id="timezone">
+                                    <option selected value="ET">Eastern Time (US & Canada) (-5/-4)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>SIS ID:</td>
+                            <td>CS5610.11550.202410</td>
+                        </tr>
+                        <tr>
+                            <td>Subaccount:</td>
+                            <td><a href="#">CS Undergrad</a></td>
+                        </tr>
+                        <tr>
+                            <td>Term:</td>
+                            <td>2023 Fall</td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Participation:</td>
+                            <td>
+                                <select id="participation">
+                                    <option selected value="TERM">Term</option>
+                                </select> <br />
+                                Course participation is limited to term start and end dates. <br />
+                                <label for="startdate">Start</label><br />
+                                <input type="date" id="startdate" /><br />
+                                <label for="enddate">End</label><br />
+                                <input type="date" id="enddate" /><br />
+                                <input type="checkbox" value="RESTRICTSTART"/> Restrict students from viewing course before term start date <br />
+                                <input type="checkbox" value="RESTRICTEND"/> Restrict students from viewing course before term end date
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Default due time:</td>
+                            <td>
+                                <select id="duetime">
+                                    <option selected value="DEFAULT">Account default (11:59pm)</option>                                   
+                                </select>
+                                <br /> 
+                                This influences the user interface for setting due dates. It does not change the time for any existing assignments.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Language:</td>
+                            <td>
+                                <select id="language">
+                                    <option selected value="NOTSET">Not set</option>                                   
+                                </select>
+                                <br /> 
+                                This will override any user/system language preference. This is only recommended for foreign language courses.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">File Storage:</td>
+                            <td>10000 megabytes</td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Large Course:</td>
+                            <td><input type="checkbox" value="LARGECOURSE" /> Launch SpeedGrader Filtered by Student Group</td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Grading Scheme:</td>
+                            <td><input type="checkbox" value="SCHEME" /> Enable course grading scheme</td>
+                        </tr>
+                        <tr>
+                            <td valign="top">License:</td>
+                            <td>
+                                <select id="license">
+                                    <option selected value="PRIVATE">Private (Copyrighted)</option>                                   
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">File Copyright:</td>
+                            <td><input type="checkbox" value="COYRIGHT" /> Copyright and license information must be provided for files before they are published.</td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Visibility:</td>
+                            <td>
+                                If you need to make your course public please contact your administrator/support. <br />
+                                <select id="visibility" disabled>
+                                    <option selected value="course">Course</option>                                   
+                                </select> <br />
+                                <input type="checkbox" value="VISIBILITY" /> Include this course in the public course index.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Format:</td>
+                            <td>
+                                <select id="format">
+                                    <option selected value="ONCAMPUS">On-campus</option>                                   
+                                </select> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Mastery paths:</td>
+                            <td> <input type="checkbox" value="VISIBILITY" /> Enable individual learning paths for students based on assessment.</td>
+                        </tr>
+                        <tr>
+                            <td valign="top">Description:</td>
+                            <td> <textarea cols="60" rows="8"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td valign="top"></td>
+                            <td> <a href="#">more options</a></td>
+                        </tr>
+                        <tr>
+                            <td valign="top"></td>
+                            <td style="text-align:right"><button>Update Course Details</button></td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </tbody>
