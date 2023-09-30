@@ -1,0 +1,105 @@
+:root {
+    --k-red: rgb(185,0,0);
+  }
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.wd-flex-grow-1 {
+    flex-grow: 1;
+}
+
+.wd-bg-color-red {
+    background-color: #ff7070;
+}
+
+.wd-kanbas-navigation {
+    background-color: black;
+    /* margin-inline-end: 20px; */
+}
+
+.wd-kanbas-navigation ul {
+    list-style: none;
+    padding: 0px;
+    width: 85px;
+    margin: 0px;
+}
+
+.wd-kanbas-navigation li {
+    padding: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.wd-kanbas-navigation li a {
+    color: white;
+    text-decoration: none;
+    /* padding: 10px; */
+}
+
+.wd-kanbas-navigation li img {
+    width: 60px;
+    height: auto;
+    padding: 5px;
+}
+
+.wd-kanbas-navigation li a i {
+    color: var(--k-red);
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+
+.wd-kanbas-navigation li a i.wd-profile {
+    color: white
+}
+
+.wd-kanbas-navigation li.wd-active {
+    background-color: white;
+}
+
+.wd-kanbas-navigation li.wd-active a{
+    color: var(--k-red);
+}
+
+.wd-course-navigation {
+    background-color: white;
+}
+
+.wd-course-navigation ul {
+    list-style: none;
+    width: 190px;
+    padding: 24px 12px 4.5rem 24px;
+}
+
+.wd-course-navigation li{
+    padding-inline-start: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.wd-course-navigation li a{
+    color: var(--k-red);
+    text-decoration: none;
+}
+
+.wd-course-navigation li.wd-active{
+    border-inline-start: 2px solid black;
+}
+
+.wd-course-navigation li.wd-active a{
+    color: black;
+}
