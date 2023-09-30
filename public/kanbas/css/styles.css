@@ -27,6 +27,7 @@ body * {
 
 .wd-kanbas-navigation {
     background-color: black;
+    /* height: 100vh; */
     /* margin-inline-end: 20px; */
 }
 
@@ -66,6 +67,10 @@ body * {
 
 .wd-kanbas-navigation li a i.wd-profile {
     color: white
+}
+
+.wd-kanbas-navigation li.wd-active a i.wd-profile {
+    color: gray
 }
 
 .wd-kanbas-navigation li.wd-active {
