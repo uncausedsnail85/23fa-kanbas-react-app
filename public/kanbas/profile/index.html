@@ -7,9 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Account - Profile</title>
-    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../../lib/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 
@@ -18,7 +18,7 @@
         <div class="wd-kanbas-navigation d-none d-md-block">
             <ul>
                 <li>
-                    <a href="#"></a><img src="../kanbas-nav-icon.png"></a>
+                    <a href="#"></a><img src="/kanbas-nav-icon.png"></a>
                 </li>
                 <li class="wd-active">
                     <a href="/kanbas/profile/index.html"><i class="fa fa-user-circle-o wd-profile" aria-hidden="true"
@@ -26,11 +26,11 @@
                         <br />Account</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <a href="/kanbas/dashboard.html"><i class="fa fa-tachometer" aria-hidden="true"></i>
                         <br />Dashboard</a>
                 </li>
                 <li>
-                    <a href="/kanbas/courses.html"><i class="fa fa-book" aria-hidden="true"></i>
+                    <a href="/kanbas/home.html"><i class="fa fa-book" aria-hidden="true"></i>
                         <br />Courses</a>
                 </li>
                 <li>
@@ -59,38 +59,58 @@
                 </li>
             </ul>
         </div>
-        <div class="wd-course-navigation d-none d-md-block">
-            <ul>
-                <li><a href="#">Notifications</a></li>
-                <li class="wd-active"><a href="/kanbas/profile/index.html">Profile</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">ePortfolios</a></li>
-                <li><a href="#">Shared Content</a></li>
-                <li><a href="#">The Hub</a></li>
-                <li><a href="#">Qwickly Course Tools</a></li>
-                <li><a href="#">Global Announcements</a></li>
-            </ul>
+        <div class="wd-flex-grow-1">
+            <div class="wd-profile-header">
+                <a href="#" class="wd-hyperlink"><i class="fa fa-bars fa-lg" style="margin-inline-end: 20px;"
+                        aria-hidden="true"></i></a>
+                Bryan Ang's Profile<br />
+            </div>
+            <div class="wd-flex-row-container">
+                <div class="wd-course-navigation d-none d-md-block">
+                    <ul>
+                        <li><a href="#">Notifications</a></li>
+                        <li class="wd-active"><a href="/kanbas/profile/index.html">Profile</a></li>
+                        <li><a href="#">Files</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">ePortfolios</a></li>
+                        <li><a href="#">Shared Content</a></li>
+                        <li><a href="#">The Hub</a></li>
+                        <li><a href="#">Qwickly Course Tools</a></li>
+                        <li><a href="#">Global Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="container wd-profile-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
+                            <h2>Bryan Ang</h2>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn wd-btn-gray" onclick="window.location.href='/kanbas/profile/edit.html';">
+                                ✎Edit Profile
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <br />
+                            <h3>Contact</h3>
+                            No registered services, you can add some on the <a href="#">settings</a> page.
+                            <br />
+                            <h3>Biography</h3>
+                            Big Nerd
+                            <br />
+                            <h3>Links</h3>
+                            <i class="fa fa-link" aria-hidden="true"></i>
+                            <a href="https://www.youtube.com/@WebDevTV/videos" class="wd-hyperlink">
+                                YouTube <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            Bryan A's Profile <br />
-            <hr class="solid" style="width:100%">
-            <h2 style="display: inline;">Bryan A</h2>
-            <!-- TODO: REMOVE WHEN CSS. Adds padding between header and edit button -->
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <button onclick="window.location.href='/kanbas/profile/edit.html';">
-                ✎Edit Profile
-            </button><br />
-            <br />
-            <h3>Contact</h3>
-            No registered services, you can add some on the <a href="#">settings</a> page.
-            <br />
-            <h3>Biography</h3>
-            Big Nerd
-            <br />
-            <h3>Links</h3>
-            <a href="#">YouTube</a>
-            <br />
-        </div>
+
     </div>
 </body>
