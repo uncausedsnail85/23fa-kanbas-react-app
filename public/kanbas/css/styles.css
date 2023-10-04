@@ -229,6 +229,10 @@ body * {
     padding: 9px;
 }
 
+.wd-course-ul li i {
+    margin-inline-end: 8px;
+}
+
 .wd-course-ul li.subitem1 {
     padding-inline-start: 4em;
 }
