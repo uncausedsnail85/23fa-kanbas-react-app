@@ -4,15 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Course - Home</title>
-    <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 
 <body>
-    <div class="d-block d-md-none">
-        Menu when screen too small AAAAAAAAAAAAAAAAAA
+    <div class="wd-course-mobile-header d-block d-md-none">
+        <div class="row">
+            <div class="col-auto text-center">
+                <a href="/kanbas/kanbas-nav.html"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a>
+            </div>
+            <div class="col text-center">
+                CS5610.11550.202410 <br />
+                Home
+            </div>
+            <div class="col-auto">
+                👓   <a href="/kanbas/course-nav.html"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        
     </div>
 
     <div class="wd-flex-row-container">
@@ -60,163 +72,376 @@
                 </li>
             </ul>
         </div>
-        <div class="wd-course-navigation d-none d-md-block">
-            <ul>
-                <li class="wd-active"><a href="/kanbas/home.html">Home</a></li>
-                <li><a href="#">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom Meetings</a></li>
-                <li><a href="/kanbas/Assignments/index.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="/kanbas/grades.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto Video</a></li>
-                <li><a href="#">Discussions</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="/kanbas/settings/course-details.html">Settings</a></li>
-            </ul>
-        </div>
         <div class="wd-flex-grow-1">
+            <div class="wd-profile-header d-none d-md-block">
+                <div class="row">
+                    <div class="col-auto">
+                        <a href="#" class="wd-hyperlink"><i class="fa fa-bars fa-lg" style="margin-inline-end: 20px;"
+                                aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col">
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb wd-breadcrumb">
+                                <li class="breadcrumb-item"><a class="wd-hyperlink" href="#">CS5610.11550.202410</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Home</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn wd-btn-gray float-end">👓 Student View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wd-flex-row-container">
+                <div class="wd-course-navigation d-none d-md-block">
+                    <ul>
+                        <li class="wd-active"><a href="/kanbas/home.html">Home</a></li>
+                        <li><a href="#">Modules</a></li>
+                        <li><a href="#">Piazza</a></li>
+                        <li><a href="#">Zoom Meetings</a></li>
+                        <li><a href="/kanbas/Assignments/index.html">Assignments</a></li>
+                        <li><a href="#">Quizzes</a></li>
+                        <li><a href="/kanbas/grades.html">Grades</a></li>
+                        <li><a href="#">People</a></li>
+                        <li><a href="#">Panopto Video</a></li>
+                        <li><a href="#">Discussions</a></li>
+                        <li><a href="#">Announcements</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Files</a></li>
+                        <li><a href="#">Rubrics</a></li>
+                        <li><a href="#">Outcomes</a></li>
+                        <li><a href="#">Collaborations</a></li>
+                        <li><a href="#">Syllabus</a></li>
+                        <li><a href="/kanbas/settings/course-details.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="wd-flex-grow-1" style="margin-inline-end: 50px; margin-top: 24px;">
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn wd-btn-gray float-end"><i class="fa fa-ellipsis-v"
+                                    aria-hidden="true"></i></button>
+                            <button class="btn wd-btn-red float-end"><i class="fa fa-plus" aria-hidden="true"></i>
+                                Module</button>
+                            <div class="dropdown float-end">
+                                <button class="btn wd-btn-gray dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i> Publish
+                                    All
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Publish All</a></li>
+                                    <li><a class="dropdown-item" href="#">Publish All Items and Modules</a></li>
+                                    <li><a class="dropdown-item" href="#">Unpublish</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn wd-btn-gray float-end">View Progress</button>
+                            <button class="btn wd-btn-gray float-end" onclick="window.location.href='#';">Collapse
+                                All</button>
+                        </div>
+                        <div class="col-12">
+                            <ul class="list-group wd-course-ul">
+                                <li class="list-group-item list-group-item-secondary">Week 0 - INTRO<div
+                                        class="float-end">
+                                        <i class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">LEARNING OBJECTIVES<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Introduction to the course<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Learn what is Web Development<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">Creating a development environment<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">Creating a Web Application<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Getting started with the 1st assignment<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
 
-            <button type="button">Collapse All</button>
-            <button type="button">View Progress</button>
-            <select id="publish-dropdown">
-                <option selected value="PUBLISHALL">Publish All</option>
-                <option value="PUBLISHALLITEMSANNMODULES">Publish All Items and Modules</option>
-                <option value="UNPUBLISH">Unpublish</option>
-            </select>
-            <button type="button">+Module</button>
-            <ul>
-                <li>Week 0 - INTRO
-                    <ul>
-                        <li>LEARNING OBJECTIVES
-                            <ul>
-                                <li>Introduction to the course</li>
-                                <li>Learn what is Web Development</li>
-                                <li>Creating a development environment</li>
-                                <li>Creating a Web Application</li>
-                                <li>Getting started with the 1st assignment</li>
-                            </ul>
-                        </li>
-                        <li>READING
-                            <ul>
-                                <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                                <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
-                            </ul>
-                        </li>
-                        <li>SLIDES
-                            <ul>
-                                <li><a href="#">Introduction to Web Development</a></li>
-                                <li><a href="#">Creating an HTTP server with Node.js</a></li>
-                                <li><a href="#">Creating a React Application </a></li>
-                                <li><a href="#">Commit your source to GitHub.com</a></li>
-                                <li><a href="#">Deploying to Netlify</a></li>
-                                <li><a href="#">Deploying multiple branches in Netliff</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>Week 1 - HTML
-                    <ul>
-                        <li>LEARNING OBJECTIVES
-                            <ul>
-                                <li>Learn how to create user interfaces with HTML</li>
-                                <li>Keep working on assignment 1</li>
-                                <li>Deploy the assignment to Netlify</li>
-                            </ul>
-                        </li>
-                        <li>READING
-                            <ul>
-                                <li>Full Stack Developer - Chapter 1 - Introduction</li>
-                                <li>Full Stack Developer - Chapter 2 - Creating User Interfaces With HTML</li>
-                            </ul>
-                        </li>
-                        <li>SLIDES
-                            <ul>
-                                <li><a href="#">Introduction to HTML and the DOM Links to an external site.</a>
+                                <li class="list-group-item">READING<div class="float-end"><i class="fa fa-check-circle"
+                                            style="color: green;" aria-hidden="true"></i></div>
                                 </li>
-                                <li><a href="#">Formatting Web content with Headings and Paragraphs Links to an
-                                        external site.</a></li>
-                                <li><a href="#">Formatting content with Lists and Tables Links to an external
-                                        site.</a></li>
-                                <li><a href="#">Creating Web Forms Links to an external site.</a></li>
-                                <li><a href="#">Navigating with Anchors Links to an external site.</a></li>
-                                <li><a href="#">Embedding content with Iframes Links to an external site.</a>
+                                <li class="list-group-item subitem1">Full Stack Developer - Chapter 1 - Introduction<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
                                 </li>
-                                <li><a href="#">Drawing with Scalable Vector Graphics Links to an external
-                                        site.</a></li>
-                                <li><a href="#">HTML - all the slides above Links to an external site.</a></li>
+                                <li class="list-group-item subitem1">Full Stack Developer - Chapter 2 - Creating User
+                                    Interfaces
+                                    With HTML<div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">SLIDES<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Introduction to Web Development <i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Creating an HTTP server with Node.js <i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Creating a React Application <i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Commit your source to GitHub.com <i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Deploying to Netlify <i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Deploying multiple branches in Netlify <i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>Week 2 - CSS
+                            <ul class="list-group wd-course-ul">
+                                <li class="list-group-item list-group-item-secondary">Week 1 - HTML<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item">LEARNING OBJECTIVES<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Learn how to create user interfaces with HTML<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">Keep working on assignment 1<div class="float-end">
+                                        <i class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Deploy the assignment to Netlify<div
+                                        class="float-end">
+                                        <i class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">READING<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Full Stack Developer - Chapter 1 - Introduction<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">Full Stack Developer - Chapter 2 - Creating User
+                                    Interfaces
+                                    With HTML<div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item">SLIDES<div class="float-end"><i class="fa fa-check-circle"
+                                            style="color: green;" aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Introduction to HTML and the DOM Links to an
+                                        external
+                                        site. <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Formatting Web content with Headings and
+                                        Paragraphs
+                                        Links
+                                        to an
+                                        external site. <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Formatting content with Lists and Tables Links to
+                                        an
+                                        external
+                                        site. <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Creating Web Forms Links to an external site.<i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Navigating with Anchors Links to an external
+                                        site.<i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Embedding content with Iframes Links to an
+                                        external
+                                        site. <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Drawing with Scalable Vector Graphics Links to an
+                                        external
+                                        site. <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">HTML - all the slides above Links to an external
+                                        site.<i class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                            </ul>
+                            <ul class="list-group wd-course-ul">
+                                <li class="list-group-item list-group-item-secondary">Week 2 - CSS<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item">LEARNING OBJECTIVES<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Introduction to CSS<div class="float-end"><i
+                                            class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">Selectors by tag ID, classes, and document
+                                    structure
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">Styling color and background color<div
+                                        class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">Styling dimensions and positions<div
+                                        class="float-end">
+                                        <i class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                                <li class="list-group-item subitem1">The box model - styling margins, borders, and
+                                    paddings
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item">READING<div class="float-end"><i class="fa fa-check-circle"
+                                            style="color: green;" aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item subitem1">Full Stack Developer - Chapter 3 - Styling User
+                                    Interfaces
+                                    With Cascading
+                                    Style Sheets<div class="float-end"><i class="fa fa-check-circle"
+                                            style="color: green;" aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item">SLIDES<div class="float-end"><i class="fa fa-check-circle"
+                                            style="color: green;" aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Introduction to Cascading Style Sheets<i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Styling with Colors<i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">The Box Model<i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Size & Position<i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Float<i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Rotating content & Gradient background<i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">Flex<i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="list-group-item"><i class="fa fa-link" aria-hidden="true"></i> <a
+                                        class="wd-hyperlink" href="#">CSS - all slides above<i
+                                            class="fa fa-external-link" aria-hidden="true"></i></a>
+                                    <div class="float-end"><i class="fa fa-check-circle" style="color: green;"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-xl-block" style="width: 25%;">
+                    <h1>Course Status </h1>
+                    <button type="button">Unpublished</button>
+                    <button type="button">Published</button>
                     <ul>
-                        <li>LEARNING OBJECTIVES
-                            <ul>
-                                <li>Introduction to CSS</li>
-                                <li>Selectors by tag ID, classes, and document structure</li>
-                                <li>Styling color and background color</li>
-                                <li>Styling dimensions and positions</li>
-                                <li>The box model - styling margins, borders, and paddings</li>
-                            </ul>
-                        </li>
-                        <li>READING
-                            <ul>
-                                <li>Full Stack Developer - Chapter 3 - Styling User Interfaces With Cascading
-                                    Style Sheets</li>
-                            </ul>
-                        </li>
-                        <li>SLIDES
-                            <ul>
-                                <li><a href="#">Introduction to Cascading Style Sheets</a>
-                                </li>
-                                <li><a href="#">Styling with Colors</a></li>
-                                <li><a href="#">The Box Model</a></li>
-                                <li><a href="#">Size & Position</a></li>
-                                <li><a href="#">Float</a></li>
-                                <li><a href="#">Rotating content & Gradient background</a></li>
-                                <li><a href="#">Flex</a></li>
-                                <li><a href="#">CSS - all slides above</a></li>
-                            </ul>
-                        </li>
+                        <li>Import Existing Content</li>
+                        <li>Import from Commons</li>
+                        <li>Choose Home Page</li>
+                        <li>View Course Stream</li>
+                        <li>New Announcement</li>
+                        <li>New Analytics</li>
+                        <li>View Course Notifications</li>
                     </ul>
-                </li>
-            </ul>
-            </td>
-        </div>
-        <div class="d-none d-xl-block">
-            <h1>Course Status </h1>
-            <button type="button">Unpublished</button>
-            <button type="button">Published</button>
-            <ul>
-                <li>Import Existing Content</li>
-                <li>Import from Commons</li>
-                <li>Choose Home Page</li>
-                <li>View Course Stream</li>
-                <li>New Announcement</li>
-                <li>New Analytics</li>
-                <li>View Course Notifications</li>
-            </ul>
-            <h1>Coming Up</h1>
-            <a href="#">View Calendar</a>
-            <ul>
-                <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
-                    Sep 5 at 7pm </li>
-                <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
-                    Sep 7 at 11:45am</li>
-                <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
-                    Sep 7 at 7pm</li>
-                <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
-                    Sep 11 at 11:45am</li>
-            </ul>
+                    <h1>Coming Up</h1>
+                    <a class="wd-hyperlink" href="#">View Calendar</a>
+                    <ul>
+                        <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
+                            Sep 5 at 7pm </li>
+                        <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
+                            Sep 7 at 11:45am</li>
+                        <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
+                            Sep 7 at 7pm</li>
+                        <li>CS5610 11550 Web Development SEC 01 Fall 2023 [VTL-2-OL]
+                            Sep 11 at 11:45am</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </body>
