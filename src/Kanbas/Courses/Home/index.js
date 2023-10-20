@@ -9,7 +9,7 @@ function Home() {
             >
                 <ModuleList />
             </div>
-            <div className="col-3">
+            <div className="col-3 d-none d-xl-block">
                 <h1>Course Status </h1>
                 <button type="button">Unpublished</button>
                 <button type="button">Published</button>

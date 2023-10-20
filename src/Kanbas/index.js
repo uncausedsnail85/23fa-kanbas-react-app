@@ -8,7 +8,7 @@ import "./index.css";
 function Kanbas() {
   return (
     <div className="wd-flex-row-container">
-      <div>
+      <div className="d-none d-md-block">
         <KanbasNavigation />
       </div>
       <div class="wd-flex-grow-1">
