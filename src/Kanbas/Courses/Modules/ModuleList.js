@@ -9,7 +9,7 @@ function ModuleList() {
   const modules = db.modules;
   return (
     <>
-      <div class="row wd-main-content" style={{ padding: 16 }}>
+      <div class="row wd-main-content">
         <div class="col-12 wd-button-bar">
           <button class="btn wd-btn-gray float-end">< FaEllipsisV /></button>
           <button class="btn wd-btn-red float-end"><FaPlus /> Module</button>

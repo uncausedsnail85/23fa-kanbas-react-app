@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa"
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
+import AssignmentEditor from "./Assignments/AssignmentEditor";
 
 function Courses() {
     const { courseId } = useParams();
@@ -58,10 +59,10 @@ function Courses() {
                                         </Link>
                                     </li>
                                     {breadCrumbs.map((breadCrumb, index) => {
-                                        return(
-                                        <li class="breadcrumb-item">
-                                            {breadCrumb}
-                                        </li>)
+                                        return (
+                                            <li class="breadcrumb-item">
+                                                {breadCrumb}
+                                            </li>)
                                     })}
                                 </ol>
                             </nav>
@@ -85,11 +86,11 @@ function Courses() {
                         <Routes>
                             <Route path="/" element={<Navigate to="Home" />} />
                             <Route path="Home" element={<Home />} />
-                            <Route path="Modules" element={<Modules/>} />
+                            <Route path="Modules" element={<Modules />} />
                             <Route path="Assignments" element={<Assignments />} />
                             <Route
                                 path="Assignments/:assignmentId"
-                                element={<h1>Assignment Editor</h1>}
+                                element={<AssignmentEditor />}
                             />
                             <Route path="Grades" element={<h1>Grades</h1>} />
                         </Routes>
