@@ -14,8 +14,7 @@
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
     margin-inline-end: 4px;
-    margin-inline-start: 16px;
-    size: 0.5em;
+    margin-inline-start: 4px;
 }
 
 .wd-btn-red {
@@ -50,4 +49,5 @@
     padding-top: 6px;
     color: green;
     font-weight: bold;
+    margin-inline-end: 8px;
 }

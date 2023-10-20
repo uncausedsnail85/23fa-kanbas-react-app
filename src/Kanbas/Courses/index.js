@@ -7,6 +7,7 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
+import Grades from "./Grades";
 
 function Courses() {
     const { courseId } = useParams();
@@ -22,8 +23,10 @@ function Courses() {
         }
     } else if (pathname.includes("Modules")) {
         breadCrumbs.push("Modules");
+    }else if (pathname.includes("Grades")) {
+        breadCrumbs.push("Grades");
     }
-    console.log(breadCrumbs)
+    
     return (
         <>
             <div class="wd-course-mobile-header d-block d-md-none">
@@ -92,7 +95,7 @@ function Courses() {
                                 path="Assignments/:assignmentId"
                                 element={<AssignmentEditor />}
                             />
-                            <Route path="Grades" element={<h1>Grades</h1>} />
+                            <Route path="Grades" element={<Grades />} />
                         </Routes>
                     </div>
                 </div>
