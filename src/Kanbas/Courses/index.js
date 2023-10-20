@@ -4,6 +4,7 @@ import CourseNavigation from "./CourseNavigation";
 import "./index.css";
 import { FaBars } from "react-icons/fa"
 import Modules from "./Modules";
+import Home from "./Home";
 
 function Courses() {
     const { courseId } = useParams();
@@ -82,7 +83,7 @@ function Courses() {
                     >
                         <Routes>
                             <Route path="/" element={<Navigate to="Home" />} />
-                            <Route path="Home" element={<h1>Home</h1>} />
+                            <Route path="Home" element={<Home />} />
                             <Route path="Modules" element={<Modules/>} />
                             <Route path="Assignments" element={<h1>Assignments</h1>} />
                             <Route
