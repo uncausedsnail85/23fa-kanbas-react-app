@@ -6,7 +6,7 @@ import Nav from "./a3/Nav";
 function Labs() {
     return (
         <div>
-            {/* <Nav /> */}
+            <Nav />
             <Assignment3 />
         </div>
     );

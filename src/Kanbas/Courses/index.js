@@ -1,14 +1,102 @@
 import db from "../../Kanbas/Database";
-import { useParams } from "react-router-dom";
-
+import { useParams, Link, useLocation, Navigate, Route, Routes, } from "react-router-dom";
+import CourseNavigation from "./CourseNavigation";
+import "./index.css";
+import { FaBars } from "react-icons/fa"
 
 function Courses() {
-  const { courseId } = useParams();
-  const course = db.courses.find((course) => course._id === courseId);
-  return (
-    <div>
-      <h1>Course {course.name}</h1>
-    </div>
-  );
+    const { courseId } = useParams();
+    const { pathname } = useLocation();
+    const course = db.courses.find((course) => course._id === courseId);
+    let breadCrumbs = [];
+    if (pathname.includes("Home")) {
+        breadCrumbs.push("Home");
+    } else if (pathname.includes("Assignment")) {
+        breadCrumbs.push("Assignment");
+        if (pathname.includes("Edit")) {
+            breadCrumbs.push("Edit");
+        }
+    } else if (pathname.includes("Modules")) {
+        breadCrumbs.push("Modules");
+    }
+    console.log(breadCrumbs)
+    return (
+        <>
+            <div class="wd-course-mobile-header d-block d-md-none">
+                <div class="row">
+                    <div class="col-auto text-center">
+                        {/* <a href="/kanbas/kanbas-nav.html"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a> */}
+                        <FaBars style={{ marginInlineEnd: 20 }} />
+                    </div>
+                    <div class="col text-center">
+                        CS5610.11550.202410 <br />
+                        Home
+                    </div>
+                    <div class="col-auto">
+                        👓   <a href="/kanbas/course-nav.html"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="wd-profile-header d-none d-md-block">
+                    <div class="row">
+                        <div class="col-auto">
+                            <Link className="wd-hyperlink" index="bars" to={pathname}>
+                                <FaBars style={{ marginInlineEnd: 20 }} />
+                            </Link>
+                        </div>
+                        <div class="col">
+                            <nav className="wd-course-nav" aria-label="breadcrumb">
+                                <ol class="breadcrumb wd-breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <Link key="course1" to={pathname} className="wd-hyperlink">
+                                            {course.name}
+                                        </Link>
+                                    </li>
+                                    {breadCrumbs.map((breadCrumb, index) => {
+                                        return(
+                                        <li class="breadcrumb-item">
+                                            {breadCrumb}
+                                        </li>)
+                                    })}
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn wd-btn-gray float-end">👓 Student View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wd-flex-row-container">
+                <CourseNavigation />
+                <div class="wd-flex-grow-1">
+                    <div
+                        // className="overflow-y-scroll position-fixed bottom-0 end-0"
+                        style={{
+                            left: "320px",
+                            top: "50px",
+                        }}
+                    >
+                        <Routes>
+                            <Route path="/" element={<Navigate to="Home" />} />
+                            <Route path="Home" element={<h1>Home</h1>} />
+                            <Route path="Modules" element={<h1>Modules</h1>} />
+                            <Route path="Assignments" element={<h1>Assignments</h1>} />
+                            <Route
+                                path="Assignments/:assignmentId"
+                                element={<h1>Assignment Editor</h1>}
+                            />
+                            <Route path="Grades" element={<h1>Grades</h1>} />
+                        </Routes>
+                    </div>
+                </div>
+            </div>
+
+        </>
+    );
 }
 export default Courses;
+
+// <div className="list-group wd-kanbas-navigation" style={{ width: 150 }}>
