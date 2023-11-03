@@ -61,8 +61,7 @@ function ModuleList() {
                       <button className="float-end btn wd-btn-transparent-module"
                         onClick={() => {
                           setShowAddModule(true);
-                          dispatch(setModule(module))
-                        }}>
+                          dispatch(setModule(module))}}>
                         <FaRegEdit />
                       </button>
                     </div>
@@ -82,8 +81,8 @@ function ModuleList() {
             onChange={(e) =>
               dispatch(setModule({ ...module, name: e.target.value }))
             } />
-          Description
-          <textarea
+            Description
+          <textarea 
             value={module.description} placeholder="Description"
             onChange={(e) =>
               dispatch(setModule({ ...module, description: e.target.value }))
