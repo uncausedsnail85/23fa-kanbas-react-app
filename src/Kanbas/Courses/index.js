@@ -10,10 +10,11 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import Settings from "./Settings";
 
-function Courses() {
+function Courses({ courses }) {
     const { courseId } = useParams();
     const { pathname } = useLocation();
-    const course = db.courses.find((course) => course._id === courseId);
+    // const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId);
     let breadCrumbs = [];
     if (pathname.includes("Home")) {
         breadCrumbs.push("Home");
@@ -31,6 +32,11 @@ function Courses() {
     }
     
     return (
+        // <>
+        // <pre>{JSON.stringify(courses, null, 2)}</pre>
+        // ------------
+        // <pre>{JSON.stringify(course, null, 2)}</pre>
+        // </>
         <>
             <div class="wd-course-mobile-header d-block d-md-none">
                 <div class="row">

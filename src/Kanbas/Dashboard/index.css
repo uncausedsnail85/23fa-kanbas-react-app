@@ -168,7 +168,7 @@ body * {
     --bs-btn-disabled-border-color: #6c757d;
 }
 
-.wd-btn-transparent {
+.wd-btn-transparent-dashboard {
     --bs-btn-color: #000000;
     --bs-btn-bg: transparent;
     --bs-btn-border-color: transparent;
@@ -184,7 +184,7 @@ body * {
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
     padding: 0px;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 .wd-dashboard-main-panel {
