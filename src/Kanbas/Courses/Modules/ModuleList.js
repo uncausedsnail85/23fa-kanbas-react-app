@@ -1,25 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import db from "../../Database";
 import "./index.css";
 import { FaEllipsisV, FaRegCheckCircle, FaPlus, FaRegTrashAlt, FaRegEdit } from "react-icons/fa"
 import { useSelector, useDispatch } from "react-redux";
+
 import {
   addModule,
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./modulesReducer";
+import * as client from "../client";
+// import { findModulesForCourse, createModule, deleteModule } from "../client";
 
 function ModuleList() {
   const { courseId } = useParams();
-  // const modules = db.modules;
+
+  // get all module
+  useEffect(() => {
+    client.findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+      );
+  }, [courseId]);
+
+
   const modules = useSelector((state) => state.modulesReducer.modules);
   const module = useSelector((state) => state.modulesReducer.module);
   const dispatch = useDispatch();
 
   // whether to show add module
   const [showAddModule, setShowAddModule] = useState(false);
+
+  // async
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
+
+  // async
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
 
   return (
     <>
@@ -55,13 +87,14 @@ function ModuleList() {
                     <div className="wd-module-title">
                       {module.name}
                       <button className="float-end btn wd-btn-transparent-module"
-                        onClick={() => dispatch(deleteModule(module._id))}>
+                        onClick={() => handleDeleteModule(module._id)}>
                         <FaRegTrashAlt />
                       </button>
                       <button className="float-end btn wd-btn-transparent-module"
                         onClick={() => {
                           setShowAddModule(true);
-                          dispatch(setModule(module))}}>
+                          dispatch(setModule(module))
+                        }}>
                         <FaRegEdit />
                       </button>
                     </div>
@@ -81,18 +114,20 @@ function ModuleList() {
             onChange={(e) =>
               dispatch(setModule({ ...module, name: e.target.value }))
             } />
-            Description
-          <textarea 
+          <br />
+          Description
+          <br />
+          <textarea
             value={module.description} placeholder="Description"
             onChange={(e) =>
               dispatch(setModule({ ...module, description: e.target.value }))
             } />
           <button className="btn wd-btn-gray"
-            onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+            onClick={handleAddModule}>
             Add
           </button>
           <button className="btn wd-btn-gray"
-            onClick={() => dispatch(updateModule(module))}>
+            onClick={handleUpdateModule}>
             Update
           </button>
         </div>}

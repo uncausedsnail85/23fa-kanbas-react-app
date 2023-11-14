@@ -9,12 +9,27 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import Settings from "./Settings";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function Courses({ courses }) {
+function Courses() {
     const { courseId } = useParams();
     const { pathname } = useLocation();
+
     // const course = db.courses.find((course) => course._id === courseId);
-    const course = courses.find((course) => course._id === courseId);
+    // const course = courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+    const URL = "http://localhost:4000/api/courses";
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(
+            `${URL}/${courseId}`
+        );
+        setCourse(response.data);
+    };
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
+
     let breadCrumbs = [];
     if (pathname.includes("Home")) {
         breadCrumbs.push("Home");
@@ -25,12 +40,12 @@ function Courses({ courses }) {
         }
     } else if (pathname.includes("Modules")) {
         breadCrumbs.push("Modules");
-    }else if (pathname.includes("Grades")) {
+    } else if (pathname.includes("Grades")) {
         breadCrumbs.push("Grades");
     } else if (pathname.includes("Settings")) {
         breadCrumbs.push("Settings");
     }
-    
+
     return (
         // <>
         // <pre>{JSON.stringify(courses, null, 2)}</pre>

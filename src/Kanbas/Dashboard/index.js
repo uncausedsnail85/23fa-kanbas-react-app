@@ -62,7 +62,7 @@ function Dashboard({ courses, course, setCourse, addCourse,
                 </button>
                 <button type="button"
                   class="btn wd-btn-transparent-dashboard float-end"
-                  onClick={() => deleteCourse(course._id)}>
+                  onClick={() => deleteCourse(course)}>
                   <FaRegTrashAlt />
                 </button>
               </div>
@@ -85,7 +85,7 @@ function Dashboard({ courses, course, setCourse, addCourse,
             <label for="enddate">Start date</label>
             <input value={course.endDate} className="form-control" type="date" id="enddate"
               onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
-            <button className="btn wd-btn-red" onClick={() => addCourse(course)}>Add</button>
+            <button className="btn wd-btn-red" onClick={() => addCourse()}>Add</button>
             <button className="btn wd-btn-gray" onClick={() => updateCourse(course)}>
               Update </button>
           </div>
