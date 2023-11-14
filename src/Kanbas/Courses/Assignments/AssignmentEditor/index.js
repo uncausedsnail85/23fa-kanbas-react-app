@@ -5,21 +5,28 @@ import { FaEllipsisV, FaRegCheckCircle, FaPlus } from "react-icons/fa"
 import "./index.css"
 import { useSelector, useDispatch } from "react-redux";
 import { addAssignment, deleteAssignment, updateAssignment, setAssignment } from "../assignmentsReducer";
+import * as client from "../client";
 
 function AssignmentEditor() {
-    const { assignmentId } = useParams();
+    const { courseId, assignmentId } = useParams();
     // const assignment = db.assignments.find(
     //     (assignment) => assignment._id === assignmentId);
-    var isNew = false;
-    if (assignmentId === "New") {
-        isNew = true;
-    }
+    var isNew = assignmentId === "New" ? true : false;
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
 
-    const { courseId } = useParams();
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
+
+    const handleAddAssignment = async () => {
+        const status = await client.createAssignment(courseId, assignment);
+        dispatch(updateAssignment(assignment));
+    }
+
+    const handleUpdateAssignment = async () => {
+        const status = await client.updateAssignment(assignment);
+        dispatch(updateAssignment(assignment));
+      };
+
     return (
         
         <div class="row wd-main-content">
@@ -36,14 +43,16 @@ function AssignmentEditor() {
                     className="form-control mb-2" />
                 {isNew && <button className="btn btn-success me-2 wd-btn-red float-end"
                     onClick={() => {
-                        dispatch(addAssignment({ ...assignment, course: courseId }));
+                        // dispatch(addAssignment({ ...assignment, course: courseId }));
+                        handleAddAssignment();
                         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
                     }}>
                     Add New
                 </button>}
                 {!isNew && <button className="btn btn-success me-2 wd-btn-red float-end"
                     onClick={() => {
-                        dispatch(updateAssignment({ ...assignment, course: courseId }));
+                        // dispatch(updateAssignment({ ...assignment, course: courseId }));
+                        handleUpdateAssignment();
                         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
                     }}>
                     Edit

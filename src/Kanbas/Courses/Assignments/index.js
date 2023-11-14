@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import db from "../../Database";
 import "./index.css";
 import { FaEllipsisV, FaRegTrashAlt, FaPlus, FaRegEdit } from "react-icons/fa"
 import { GiNotebook } from "react-icons/gi"
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, deleteAssignment, setAssignment, } from "./assignmentsReducer";
+import { addAssignment, deleteAssignment, setAssignment, setAssignments } from "./assignmentsReducer";
+import * as client from "./client";
 
 function Assignments() {
     const { courseId } = useParams();
     const navigate = useNavigate();
 
     // const assignments = db.assignments;
+    // const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+    // get all assignments in course
     const assignments = useSelector((state) => state.assignmentsReducer.assignments);
-    const courseAssignments = assignments.filter(
-        (assignment) => assignment.course === courseId);
+    useEffect(() => {
+        client.findAssignmentsForCourse(courseId)
+            .then((modules) =>
+                dispatch(setAssignments(modules))
+            );
+    }, [courseId]);
+
     const dispatch = useDispatch();
+
+    const handleDeleteAssignment = async (assignmentId) => {
+        const status = await client.deleteAssignment(assignmentId);
+        dispatch(deleteAssignment(assignmentId));
+    }
+
     return (
         <>
             <div class="row wd-main-content" style={{ padding: 16 }}>
@@ -36,7 +50,7 @@ function Assignments() {
             </div>
             <div>
                 <div className="list-group">
-                    {courseAssignments.map((assignment) => (
+                    {assignments.map((assignment) => (
                         <ul className="list-group wd-course-ul">
                             <li className="list-group-item list-group-item-secondary">
                                 <div class="d-flex flex-row">
@@ -55,7 +69,7 @@ function Assignments() {
                                     </button>
                                     <button className="float-end btn wd-btn-transparent-module"
                                         onClick={() => {
-                                            dispatch(deleteAssignment(assignment._id));
+                                            handleDeleteAssignment(assignment._id);
                                         }}>
                                         <FaRegTrashAlt />
                                     </button>
