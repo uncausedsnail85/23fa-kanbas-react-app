@@ -8,13 +8,14 @@ import { useState, useEffect } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
+import * as client from "./client";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
   const URL = "http://localhost:4000/api/courses";
   const findAllCourses = async () => {
-    const response = await axios.get(URL);
-    setCourses(response.data);
+    const response = await client.findAllCourses();
+    setCourses(response);
   };
   useEffect(() => {
     findAllCourses();
@@ -27,6 +28,7 @@ function Kanbas() {
     var id = courses[courses.length - 1]._id; // GET RS103
     id = Number(id.slice(2)) + 1; // GET 104
   }
+  // var id = 21
   // console.log("init id" + id.toString())
 
   const [course, setCourse] = useState({
@@ -39,22 +41,20 @@ function Kanbas() {
   });
   // console.log("init id: " + course.idNum)
   const addCourse = async () => {
-    const response = await axios.post(URL, course);
+    const response = await client.addCourse(course);
     // add respose to browser side courses
-    setCourses([response.data, ...courses]);
+    setCourses([response, ...courses]);
     //Reset Course
     setCourse({ name: "" });
   };
   const deleteCourse = async (course) => {
-    const response = await axios.delete(
-      `${URL}/${course._id}`
-    );
+    const response = await client.deleteCourse(course);
     setCourses(courses.filter(
       (c) => c._id !== course._id));
   };
 
   const updateCourse = async (course) => {
-    const response = await axios.put(`${URL}/${course._id}`, course);
+    const response = await client.addCourse(course);
     setCourses(courses.map((c) => (c._id === course._id ? course : c)));
     setCourse({ name: "" });
   };
