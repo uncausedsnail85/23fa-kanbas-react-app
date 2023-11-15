@@ -3,12 +3,137 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Courses - Assignments</title>
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/kanbas/css/styles.css" />
 </head>
 
 
 <body>
-    <table>
+
+    <div class="wd-flex-row-container">
+        <div class="wd-kanbas-navigation d-none d-md-block">
+            <ul>
+                <li>
+                    <a href="#"></a><img src="/kanbas-nav-icon.png"></a>
+                </li>
+                <li>
+                    <a href="/kanbas/profile/index.html"><i class="fa fa-user-circle-o wd-profile" aria-hidden="true"
+                            style></i>
+                        <br />Account</a>
+                </li>
+                <li>
+                    <a href="/kanbas/dashboard.html"><i class="fa fa-tachometer" aria-hidden="true"></i>
+                        <br />Dashboard</a>
+                </li>
+                <li class="wd-active">
+                    <a href="/kanbas/home.html"><i class="fa fa-book" aria-hidden="true"></i>
+                        <br />Courses</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i>
+                        <br />Calendar</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-inbox" aria-hidden="true"></i>
+                        <br />Inbox</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-history" aria-hidden="true"></i>
+                        <br />History</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-television" aria-hidden="true"></i>
+                        <br />Studio</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                        <br />Commons</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                        <br />Help</a>
+                </li>
+            </ul>
+        </div>
+        <div class="wd-flex-grow-1">
+            <div class="wd-profile-header d-none d-md-block">
+                <div class="row">
+                    <div class="col-auto">
+                        <a href="#" class="wd-hyperlink"><i class="fa fa-bars fa-lg" style="margin-inline-end: 20px;"
+                                aria-hidden="true"></i></a>
+                    </div>
+                    <div class="col">
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb wd-breadcrumb">
+                                <li class="breadcrumb-item"><a class="wd-hyperlink" href="#">CS5610.11550.202410</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn wd-btn-gray float-end">👓 Student View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wd-flex-row-container">
+                <div class="wd-course-navigation d-none d-md-block">
+                    <ul>
+                        <li><a href="/kanbas/home.html">Home</a></li>
+                        <li><a href="#">Modules</a></li>
+                        <li><a href="#">Piazza</a></li>
+                        <li><a href="#">Zoom Meetings</a></li>
+                        <li  class="wd-active"><a href="/kanbas/Assignments/index.html">Assignments</a></li>
+                        <li><a href="#">Quizzes</a></li>
+                        <li><a href="/kanbas/grades.html">Grades</a></li>
+                        <li><a href="#">People</a></li>
+                        <li><a href="#">Panopto Video</a></li>
+                        <li><a href="#">Discussions</a></li>
+                        <li><a href="#">Announcements</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="#">Files</a></li>
+                        <li><a href="#">Rubrics</a></li>
+                        <li><a href="#">Outcomes</a></li>
+                        <li><a href="#">Collaborations</a></li>
+                        <li><a href="#">Syllabus</a></li>
+                        <li><a href="/kanbas/settings/course-details.html">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="wd-flex-grow-1" style="margin-inline-end: 50px; margin-top: 24px;">
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn wd-btn-gray float-end"><i class="fa fa-ellipsis-v"
+                                    aria-hidden="true"></i></button>
+                            <button class="btn wd-btn-red float-end"><i class="fa fa-plus" aria-hidden="true"></i>
+                                Module</button>
+                            <div class="dropdown float-end">
+                                <button class="btn wd-btn-gray dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa fa-check-circle" style="color: green;" aria-hidden="true"></i> Publish
+                                    All
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Publish All</a></li>
+                                    <li><a class="dropdown-item" href="#">Publish All Items and Modules</a></li>
+                                    <li><a class="dropdown-item" href="#">Unpublish</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn wd-btn-gray float-end">View Progress</button>
+                            <button class="btn wd-btn-gray float-end" onclick="window.location.href='#';">Collapse
+                                All</button>
+                        </div>
+                        <div class="col-12">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <table>
         <tbody>
             <tr>
                 <td valign="top">
@@ -55,7 +180,6 @@
                     </select>
                     <hr class="solid">
 
-                    <!-- Assignments -->
                     <h3 style="display: inline;">ASSIGNMENTS 40% of Total</h3> <select id="assignment-edit">
                         <option selected value="EDIT">Edit</option>
                         <option value="SPEEDGRADER">Speed Grader</option>
@@ -93,7 +217,6 @@
                         </li>
                     </ul>
 
-                    <!-- Quizzes -->
                     <h3 style="display: inline;">QUIZZES 10% of Total</h3> <select id="quizzes-edit">
                         <option selected value="EDIT">Edit</option>
                         <option value="SPEEDGRADER">Speed Grader</option>
@@ -127,7 +250,6 @@
                         </li>
                     </ul>
 
-                    <!-- EXAMS -->
                     <h3 style="display: inline;">EXAMS 20% of Total</h3> <select id="exams-edit">
                         <option selected value="EDIT">Edit</option>
                         <option value="SPEEDGRADER">Speed Grader</option>
@@ -149,7 +271,6 @@
                         </li>
                     </ul>
 
-                    <!-- Project -->
                     <h3 style="display: inline;">PROJECT 30% of Total</h3> <select id="PROJECT-edit">
                         <option selected value="EDIT">Edit</option>
                         <option value="SPEEDGRADER">Speed Grader</option>
@@ -169,6 +290,6 @@
                 </td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
 
 </body>

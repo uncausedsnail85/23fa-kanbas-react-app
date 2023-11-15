@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Course - Grades</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css" />
 </head>
 
 
@@ -57,55 +59,61 @@
                     <button type="button">Configure</button>
 
                     <form id="text-fields">
-                        <label for="text-fields-student-names"><h3>Student Names</h3></label>
+                        <label for="text-fields-student-names">
+                            <h3>Student Names</h3>
+                        </label>
                         <input id="text-fields-student-names" placeholder="Search Students" /><br />
-                        <label for="text-fields-assignments-names"><h3>Assignments Names</h3></label>
+                        <label for="text-fields-assignments-names">
+                            <h3>Assignments Names</h3>
+                        </label>
                         <input id="text-fields-assignments-names" placeholder="Search Assignments" /><br />
                         <br />
                         <button type="button">Apply Filters</button>
                     </form>
 
-                <table border="1" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>A1 SETUP <br /> Out of 100</th>
-                            <th>A2 HTML <br /> Out of 100</th>
-                            <th>A3 CSS <br /> Out of 100</th>
-                            <th>A4 BOOTSTRAP <br /> Out of 100</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Alice Doe</td>
-                            <td>98</td>
-                            <td>89</td>
-                            <td>98</td>
-                            <td>89</td>
-                        </tr>
-                        <tr>
-                            <td>Bob Doe</td>
-                            <td>87</td>
-                            <td>78</td>
-                            <td>78</td>
-                            <td>87</td>
-                        </tr>
-                        <tr>
-                            <td>Bryan Ang</td>
-                            <td><input type="number" value="100" size="4"/></td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>Cool McCoolerson</td>
-                            <td>56</td>
-                            <td><input type="number" value="0" size="4"/></td>
-                            <td>76</td>
-                            <td>32</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>A1 SETUP <br /> Out of 100</th>
+                                    <th>A2 HTML <br /> Out of 100</th>
+                                    <th>A3 CSS <br /> Out of 100</th>
+                                    <th>A4 BOOTSTRAP <br /> Out of 100</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alice Doe</td>
+                                    <td>98</td>
+                                    <td>89</td>
+                                    <td>98</td>
+                                    <td>89</td>
+                                </tr>
+                                <tr>
+                                    <td>Bob Doe</td>
+                                    <td>87</td>
+                                    <td>78</td>
+                                    <td>78</td>
+                                    <td>87</td>
+                                </tr>
+                                <tr>
+                                    <td>Bryan Ang</td>
+                                    <td><input type="number" value="100" size="4" /></td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>Cool McCoolerson</td>
+                                    <td>56</td>
+                                    <td><input type="number" value="0" size="4" /></td>
+                                    <td>76</td>
+                                    <td>32</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </td>
             </tr>
         </tbody>
