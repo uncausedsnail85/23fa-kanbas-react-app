@@ -9,6 +9,10 @@ import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
 import * as client from "./client";
+import Signin from "./Users/signin"
+import Account from "./Users/account";
+import UserTable from "./Users/table";
+import Signup from "./Users/signup";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
@@ -68,7 +72,11 @@ function Kanbas() {
         <div class="wd-flex-grow-1">
           <Routes>
             <Route path="/" element={<Navigate to="Dashboard" />} />
-            <Route path="Account" element={<h1>Account</h1>} />
+            <Route path="Account" element={<Account />} />
+            <Route path="/account/:id" element={<Account />} />
+            <Route path="Signin" element={<Signin />} />
+            <Route path="Signup" element={<Signup />} />
+            <Route path="/admin/users" element={<UserTable />} />
             <Route path="Dashboard" element={<Dashboard
               courses={courses}
               course={course}
@@ -77,7 +85,7 @@ function Kanbas() {
               deleteCourse={deleteCourse}
               updateCourse={updateCourse} />} />
             <Route path="Courses/:courseId/*" element={
-              <Courses/>} />
+              <Courses />} />
           </Routes>
 
         </div>
