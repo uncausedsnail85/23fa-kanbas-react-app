@@ -11,6 +11,7 @@ import Grades from "./Grades";
 import Settings from "./Settings";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import * as client from "./client";
 
 function Courses() {
     const { courseId } = useParams();
@@ -19,12 +20,17 @@ function Courses() {
     // const course = db.courses.find((course) => course._id === courseId);
     // const course = courses.find((course) => course._id === courseId);
     const [course, setCourse] = useState({});
-    const URL = "http://localhost:4000/api/courses";
+    const URL = `${process.env.REACT_APP_API_BASE}/courses`;
+    // const findCourseById = async (courseId) => {
+    //     const response = await axios.get(
+    //         `${URL}/${courseId}`
+    //     );
+    //     setCourse(response.data);
+    // };
     const findCourseById = async (courseId) => {
-        const response = await axios.get(
-            `${URL}/${courseId}`
-        );
-        setCourse(response.data);
+        const response = await client.findCourseById(courseId);
+        // console.log(JSON.stringify(response))
+        setCourse(response);
     };
     useEffect(() => {
         findCourseById(courseId);
