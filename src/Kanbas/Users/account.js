@@ -15,7 +15,8 @@ function Account() {
     const fetchAccount = async () => {
         const account = await client.account();
         setAccount(account);
-        if (account == null) {
+        console.log(`account: ${account}`)
+        if (!account) {
             navigate(`/Kanbas/Signin`)
         }
     };
