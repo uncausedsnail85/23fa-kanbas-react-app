@@ -28,7 +28,6 @@ function Kanbas() {
     var id = courses[courses.length - 1]._id; // GET RS103
     id = Number(id.slice(2)) + 1; // GET 104
   }
-  // var id = 21
   // console.log("init id" + id.toString())
 
   const [course, setCourse] = useState({
